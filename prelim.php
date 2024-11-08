@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Student Enrollment Form</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Student Enrollment Form</title>
 
-    <style>
+  <style>
     .status-passed { color: green; font-weight: bold; }
     .status-failed { color: red; font-weight: bold; }
   </style>
 
-
 </head>
-<body>
+<body>	
 
-<div class="container d-flex flex-column align-items-center">
+  <div class="container d-flex flex-column align-items-center">
     <h2 class="text-center my-4">Student Enrollment And Grade Processing System</h2>
 
     <form id="enrollmentForm" action="#" method="post" onsubmit="showGradeForm(event)" class="w-100 w-md-75 w-lg-50">
@@ -46,10 +45,10 @@
       <div class="mb-3">
         <label for="course">Course</label>
         <select id="course" name="course" class="form-select" required>
-                <option value="BSIT" checked>BSIT (Bachelor of Science in Information Technology)</option>
+          
+          	<option value="BSIT" checked>BSIT (Bachelor of Science in Information Technology)</option>
             	<option value="BSHM">BSHM (Bachelor of Science in Hospitality Management)</option>
             	<option value="BSBA">BSBA (Bachelor of Science in Business Administration)</option>
-
 
         </select>
       </div>
@@ -137,9 +136,9 @@
     </div>
   </div>
 
-    <script>
+  <script>
 
-function showGradeForm(event) {
+    function showGradeForm(event) {
       event.preventDefault();
 
       const firstName = document.getElementById('first_name').value;
@@ -157,7 +156,7 @@ function showGradeForm(event) {
       document.getElementById('gradeForm').style.display = 'block';
     }
 
-  function submitGrades(event) {
+    function submitGrades(event) {
       event.preventDefault();
 
       const prelim = parseFloat(document.getElementById('prelim').value);
@@ -185,9 +184,10 @@ function showGradeForm(event) {
     }
 
 
+  </script>
 
-    </script>
 
-    
 </body>
+
+
 </html>
