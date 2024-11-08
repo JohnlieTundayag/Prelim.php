@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Student Enrollment Form</title>
+
+    <style>
+    .status-passed { color: green; font-weight: bold; }
+    .status-failed { color: red; font-weight: bold; }
+  </style>
+
+
 </head>
 <body>
 
@@ -150,8 +157,34 @@ function showGradeForm(event) {
       document.getElementById('gradeForm').style.display = 'block';
     }
 
+  function submitGrades(event) {
+      event.preventDefault();
 
-    
+      const prelim = parseFloat(document.getElementById('prelim').value);
+      const midterm = parseFloat(document.getElementById('midterm').value);
+      const finals = parseFloat(document.getElementById('finals').value);
+      const average = ((prelim + midterm + finals) / 3).toFixed(2);
+
+      let status = average >= 75 ? 'Passed' : 'Failed';
+      let statusClass = average >= 75 ? 'status-passed' : 'status-failed';
+
+      document.getElementById('displayFirstName').textContent = window.studentDetails.firstName;
+      document.getElementById('displayLastName').textContent = window.studentDetails.lastName;
+      document.getElementById('displayAge').textContent = window.studentDetails.age;
+      document.getElementById('displayGender').textContent = window.studentDetails.gender;
+      document.getElementById('displayCourse').textContent = window.studentDetails.course;
+      document.getElementById('displayEmail').textContent = window.studentDetails.email;
+      document.getElementById('displayPrelim').textContent = prelim;
+      document.getElementById('displayMidterm').textContent = midterm;
+      document.getElementById('displayFinals').textContent = finals;
+      document.getElementById('displayAverage').textContent = `${average} (${status})`;
+      document.getElementById('displayAverage').classList.add(statusClass);
+
+      document.getElementById('gradeForm').style.display = 'none';
+      document.getElementById('studentDetails').style.display = 'block';
+    }
+
+
 
     </script>
 
